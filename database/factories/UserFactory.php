@@ -27,8 +27,16 @@ class UserFactory extends Factory
             'name' => fake()->name(),
             'email' => fake()->unique()->safeEmail(),
             'email_verified_at' => now(),
+            'phone' => fake()->unique()->phoneNumber(),
+            'birth_date' => fake()->date(),
+            'phone_verified_at' => now(),
+            'last_login_at' => now(),
+            'last_login_ip' => fake()->ipv4(),
             'password' => static::$password ??= Hash::make('password'),
             'remember_token' => Str::random(10),
+            'created_ip' => fake()->ipv4(),
+            'country_name' => fake()->country(),
+            'city_name' => fake()->city(),
         ];
     }
 

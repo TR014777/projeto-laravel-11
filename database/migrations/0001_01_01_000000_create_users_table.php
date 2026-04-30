@@ -15,10 +15,21 @@ return new class extends Migration
             $table->id();
             $table->string('name');
             $table->string('email')->unique();
+            $table->date('birth_date');
             $table->timestamp('email_verified_at')->nullable();
+            $table->string('phone', 20)->unique()->nullable();
+            $table->timestamp('phone_verified_at')->nullable();
+            $table->timestamp('last_login_at')->nullable();
+            $table->string('last_login_ip', 45)->nullable();
+            $table->tinyInteger('status')->unsigned()->nullable();
             $table->string('password');
             $table->rememberToken();
+            $table->boolean('is_admin')->default(false);
+            $table->softDeletes();
             $table->timestamps();
+            $table->string('created_ip', 45)->nullable();
+            $table->string('country_name', 100)->nullable();
+            $table->string('city_name', 100)->nullable();
         });
 
         Schema::create('password_reset_tokens', function (Blueprint $table) {
@@ -35,6 +46,31 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        DB::table('users')->insert([
+            [
+                'name' => 'Admin',
+                'email' => 'admin@email.com',
+                'password' => Hash::make('00000000'),
+                'birth_date' => '1990-01-01',
+                'phone' => '5511999999999',
+                'status' => 0,
+                'is_admin' => true,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ],
+            [
+                'name' => 'João Ninguém',
+                'email' => 'joao@email.com',
+                'password' => Hash::make('00000000'),
+                'birth_date' => '1990-01-01',
+                'phone' => '5511888888888',
+                'status' => 0,
+                'is_admin' => false,
+                'created_at' => now(),
+                'updated_at' => now(),
+            ]
+        ]);
     }
 
     /**
