@@ -25,7 +25,7 @@ class StoreUserRequest extends FormRequest
         return [
             'name' => 'required|string|max:32',
             'email' => [
-                'required', 
+                'required',
                 'email', 
                 Rule::unique("users", "email")->ignore($this->user, "id")
             ],

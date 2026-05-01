@@ -14,6 +14,7 @@ class UpdateUserRequest extends StoreUserRequest
     public function rules(): array
     {
         $rules = parent::rules();
+        $rules["phone"] = "nullable|string|max:20|Rule::unique(User::class)->ignore($this->user()->id)";
         $rules["password"] = "nullable|string|min:8|max:32";
         return $rules;
     }
