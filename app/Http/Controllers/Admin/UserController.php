@@ -13,9 +13,26 @@ use Stevebauman\Location\Facades\Location;
 
 class UserController extends Controller
 {
-    public function index()
+    public function index(Request $request)
     {
-        $users = User::paginate(10); //User::all();
+        $users = User::query()
+            ->when($request->user_id, function ($query, $id) {
+                $query->where('id', $id);
+            })
+
+            ->when($request->search, function ($query, $search) {
+                $query->where(function ($q) use ($search) {
+                    $q->where('name', 'like', "%{$search}%")
+                    ->orWhere('email', 'like', "%{$search}%");
+                });
+            })
+
+            ->when($request->filled('status'), function ($query) {
+                $query->where('status', request('status'));
+            })
+            ->paginate(10)
+            ->withQueryString();
+
         return view('admin.users.index', compact('users'));
     }
 

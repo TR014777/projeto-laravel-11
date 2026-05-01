@@ -11,7 +11,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
-<body class="bg-gray-100 dark:bg-gray-900 flex flex-col min-h-screen"">
+<body class="bg-gray-100 dark:bg-gray-900 flex flex-col min-h-screen">
     @include('layouts.navigation')
     <main class="flex-grow">
         @yield('content')
