@@ -11,6 +11,7 @@
     <!-- Scripts -->
     @vite(['resources/css/app.css', 'resources/js/app.js'])
 </head>
+<!--Layout da página de admin-->
 <body class="bg-gray-100 dark:bg-gray-900 flex flex-col min-h-screen">
     @include('layouts.navigation')
     <main class="flex-grow">

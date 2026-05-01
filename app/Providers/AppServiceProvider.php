@@ -26,5 +26,6 @@ class AppServiceProvider extends ServiceProvider
     {
         Event::listen(Login::class, UpdateStatusOnLogin::class);
         Event::listen(Logout::class, UpdateStatusOnLogout::class);
+        \Carbon\Carbon::setLocale('pt_BR');
     }
 }

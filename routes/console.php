@@ -9,6 +9,7 @@ Artisan::command('inspire', function () {
     $this->comment(Inspiring::quote());
 })->purpose('Display an inspiring quote')->hourly();
 
+//Atualiza de 5 em 5 minutos e verifica se o usuário ainda ta ativo
 Schedule::call(function () {
     User::where('status', 1)
         ->where('last_login_at', '<', now()->subMinutes(5))

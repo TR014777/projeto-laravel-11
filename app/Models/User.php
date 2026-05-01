@@ -24,11 +24,10 @@ class User extends Authenticatable
         'password',
         'phone',
         'status',
-        'last_login_at',
-        'last_login_ip',
+        'start_time', 'end_time',
+        'last_login_at', 'last_login_ip',
         'created_ip',
-        'country_name',
-        'city_name',        
+        'country_name', 'city_name'
     ];
 
     /**
@@ -56,4 +55,8 @@ class User extends Authenticatable
             'password' => 'hashed',
         ];
     }
+
+    public function appointments() {
+        return $this->hasMany(Appointment::class);
+    }   
 }

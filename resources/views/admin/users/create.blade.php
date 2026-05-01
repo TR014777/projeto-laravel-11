@@ -12,6 +12,7 @@
         </h2>
     </div>
 </header>
+<!--Vai pegar o formulário para criar um novo usuário-->
 <form action="{{ route('users.store') }}" method="POST">
     @include('admin.users.partials.form')
 </form>

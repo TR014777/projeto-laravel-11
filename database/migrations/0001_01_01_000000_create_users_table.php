@@ -7,7 +7,7 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Criando a tabela de usuários
      */
     public function up(): void
     {
@@ -22,6 +22,8 @@ return new class extends Migration
             $table->timestamp('last_login_at')->nullable();
             $table->string('last_login_ip', 45)->nullable();
             $table->tinyInteger('status')->unsigned()->nullable();
+            $table->integer('start_time')->default(6); 
+            $table->integer('end_time')->default(20);
             $table->string('password');
             $table->rememberToken();
             $table->boolean('is_admin')->default(false);
@@ -46,6 +48,10 @@ return new class extends Migration
             $table->longText('payload');
             $table->integer('last_activity')->index();
         });
+
+        /** 
+         * Criando usuários testes
+         */
 
         DB::table('users')->insert([
             [
@@ -74,12 +80,12 @@ return new class extends Migration
     }
 
     /**
-     * Reverse the migrations.
+     * Reverte as migrações
      */
     public function down(): void
     {
-        Schema::dropIfExists('users');
-        Schema::dropIfExists('password_reset_tokens');
-        Schema::dropIfExists('sessions');
+        // Schema::dropIfExists('users');
+        // Schema::dropIfExists('password_reset_tokens');
+        // Schema::dropIfExists('sessions');
     }
 };

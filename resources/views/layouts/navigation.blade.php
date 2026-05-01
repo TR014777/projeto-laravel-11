@@ -16,6 +16,13 @@
                         {{ __('Dashboard') }}
                     </x-nav-link>
                 </div>
+                <div class="hidden space-x-8 sm:-my-px sm:ms-10 sm:flex">
+                    <x-nav-link :href="route('appointments.index')" :active="request()->routeIs('appointments.index')">
+                        {{ __('Agendamentos') }}
+                    </x-nav-link>
+                </div>
+
+                <!-- Admin Links -->
                 @if(Auth::user()->is_admin==true)
                     <div class="hidden sm:flex sm:items-center sm:ms-6">
                         <x-dropdown align="right" width="48">

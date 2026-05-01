@@ -7,18 +7,26 @@ use Illuminate\Support\Facades\Schema;
 return new class extends Migration
 {
     /**
-     * Run the migrations.
+     * Criando a tabela de agendamentos
      */
     public function up(): void
     {
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
+            $table->foreignId('user_id')->constrained()->onDelete('cascade');
+            $table->string('client');
+            $table->date('date');
+            $table->string('weekday');
+            $table->time('start');
+            $table->time('end');
+            $table->tinyInteger('status')->default(0);
+            $table->string('color')->default('#301d53');
             $table->timestamps();
         });
     }
 
     /**
-     * Reverse the migrations.
+     * Reverte as tabelas
      */
     public function down(): void
     {

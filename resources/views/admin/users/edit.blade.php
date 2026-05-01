@@ -11,6 +11,7 @@
             </h2>
         </div>
     </header>
+    <!--Vai pegar o formulário com as informações do usuário que quer atualizar-->
     <form action="{{ route('users.update', $user->id) }}" method="POST">
         @method("PUT")
         @include('admin.users.partials.form')

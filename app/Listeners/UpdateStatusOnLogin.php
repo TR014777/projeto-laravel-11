@@ -13,6 +13,7 @@ class UpdateStatusOnLogin
         //
     }
 
+    //Atualiza status do usuário para ativo
     public function handle(Login $event): void
     {
         $event->user->update([
