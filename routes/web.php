@@ -2,6 +2,7 @@
 
 use App\Http\Controllers\Admin\UserController;
 use App\Http\Controllers\AppointmentController;
+use App\Http\Controllers\DashboardController;
 use App\Http\Controllers\ProfileController;
 use Illuminate\Support\Facades\Route;
 
@@ -26,11 +27,9 @@ Route::get('/', function () {
 //-----------------------------------------------------------------------------Pagina Inicial
 
 
-//-----------------------------------------------------------------------------Início
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-//-----------------------------------------------------------------------------Início
+//-----------------------------------------------------------------------------Dashboard ( Início )
+Route::get('/dashboard', [DashboardController::class, 'index'])->middleware(['auth', 'verified'])->name('dashboard');
+//-----------------------------------------------------------------------------Dashboard ( Início )
 
 //-----------------------------------------------------------------------------Rotas normais de usuário
 Route::middleware('auth')->group(function () {

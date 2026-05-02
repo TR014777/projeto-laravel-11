@@ -21,6 +21,12 @@ Crie o Arquivo .env
 cp .env.example .env
 ```
 
+Mude o fuso horário para o seu dentro do arquivo .env
+Ex.:
+```
+APP_TIMEZONE=America/Sao_Paulo
+```
+
 Acesse o container app
 ```sh
 docker-compose exec app bash
