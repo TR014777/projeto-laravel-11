@@ -14,7 +14,8 @@ return new class extends Migration
         Schema::create('appointments', function (Blueprint $table) {
             $table->id();
             $table->foreignId('user_id')->constrained()->onDelete('cascade');
-            $table->string('client');
+            $table->string('client',63);
+            $table->string('service', 255)->nullable();
             $table->date('date');
             $table->string('weekday');
             $table->time('start');

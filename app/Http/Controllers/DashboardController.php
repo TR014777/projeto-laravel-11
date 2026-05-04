@@ -70,7 +70,7 @@ class DashboardController extends Controller
         //Estatísticas de usuários
         $adminData = $this->getAdminStats($user);
 
-        return view('dashboard', array_merge(
+        return view('index', array_merge(
             [
                 'statsAppo'   => $statsAppo,
                 'statsGlobal' => $statsGlobal,

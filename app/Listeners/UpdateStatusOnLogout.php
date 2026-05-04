@@ -13,6 +13,7 @@ class UpdateStatusOnLogout
         //
     }
 
+    //Atualiza status do usuário para inativo
     public function handle(Logout $event): void
     {
         if ($event->user) {

@@ -11,7 +11,7 @@
         <!--Pegando o início do turno-->
         <div class="flex items-center gap-2">
             <x-input-label>{{ __('Início:') }}</x-input-label>
-            <select name="start_time" class="rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:ring-blue-500 text-sm">
+            <select name="start_time" class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 pl-3 pr-8 text-sm">
                 @for($i=0; $i<24; $i++)
                     <option value="{{ $i }}" {{ $prefStart == $i ? 'selected' : '' }}>{{ sprintf('%02d:00', $i) }}</option> <!--Um esquema de formatação de texto para o select-->
                 @endfor
@@ -21,7 +21,7 @@
         <!--Pegando o fim do turno-->
         <div class="flex items-center gap-2">
             <x-input-label>{{ __('Fim:') }}</x-input-label>
-            <select name="end_time" class="rounded-md border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 shadow-sm focus:ring-blue-500 text-sm">
+            <select name="end_time" class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 pl-3 pr-8 text-sm">
                 @for($i=0; $i<24; $i++)
                     <option value="{{ $i }}" {{ $prefEnd == $i ? 'selected' : '' }}>{{ sprintf('%02d:00', $i) }}</option> <!--Mesma coisa porém pro final também-->
                 @endfor

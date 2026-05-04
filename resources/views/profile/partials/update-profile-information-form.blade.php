@@ -18,14 +18,14 @@
         @method('patch')
 
         <div>
-            <x-input-label for="name" :value="__('Nome')" />
-            <x-text-input id="name" name="name" type="text" class="mt-1 block w-full" :value="old('name', $user->name)" required autofocus autocomplete="name" />
+            <x-input-label class="text-zinc-400 text-xs ml-1 mb-1" for="name" :value="__('Nome')" />
+            <x-text-input id="name" name="name" type="text" class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 px-4 text-sm" :value="old('name', $user->name)" required autofocus autocomplete="name" />
             <x-input-error class="mt-2" :messages="$errors->get('name')" />
         </div>
 
         <div>
-            <x-input-label for="email" :value="__('E-mail')" />
-            <x-text-input id="email" name="email" type="email" class="mt-1 block w-full" :value="old('email', $user->email)" required autocomplete="username" />
+            <x-input-label class="text-zinc-400 text-xs ml-1 mb-1" for="email" :value="__('E-mail')" />
+            <x-text-input id="email" name="email" type="email" class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 px-4 text-sm" :value="old('email', $user->email)" required autocomplete="username" />
             <x-input-error class="mt-2" :messages="$errors->get('email')" />
 
             @if ($user instanceof \Illuminate\Contracts\Auth\MustVerifyEmail && ! $user->hasVerifiedEmail())
@@ -48,15 +48,15 @@
         </div>
 
         <div>
-            <x-input-label for="phone" :value="__('Telefone (Opcional)')" />
-            <x-text-input id="phone" name="phone" type="text" class="mt-1 block w-full" :value="old('phone', $user->phone)" placeholder="+55 (99) 99999-9999" />
+            <x-input-label class="text-zinc-400 text-xs ml-1 mb-1" for="phone" :value="__('Telefone (Opcional)')" />
+            <x-text-input id="phone" name="phone" type="text" class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 px-4 text-sm" :value="old('phone', $user->phone)" placeholder="+55 (99) 99999-9999" />
             <x-input-error class="mt-2" :messages="$errors->get('phone')" />
         </div>
 
         <div>
-            <x-input-label for="birth_date" :value="__('Data de Nascimento')" />
+            <x-input-label class="text-zinc-400 text-xs ml-1 mb-1" for="birth_date" :value="__('Data de Nascimento')" />
             <input type="date" id="birth_date" name="birth_date" 
-                class="mt-1 block w-full border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" 
+                class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 px-4 text-sm border-gray-300 dark:border-gray-700 dark:bg-gray-900 dark:text-gray-300 focus:border-indigo-500 dark:focus:border-indigo-600 focus:ring-indigo-500 dark:focus:ring-indigo-600 rounded-md shadow-sm" 
                 value="{{ old('birth_date', $user->birth_date ? $user->birth_date->format('Y-m-d') : '') }}" />
             <x-input-error class="mt-2" :messages="$errors->get('birth_date')" />
         </div>

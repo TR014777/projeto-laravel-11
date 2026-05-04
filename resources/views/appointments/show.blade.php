@@ -1,13 +1,12 @@
 <x-app-layout>
     <x-slot name="header">
-        @include('appointments.partials.breadcrumb')
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
             {{ __('Detalhes do Agendamento') }}
         </h2>
     </x-slot>
 
    <div class="py-12">
-        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8">
+        <div class="max-w-7xl sm:px-6 lg:px-8">
             <div class="p-4 mb-12 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
                 <x-alert />
                 <div class="max-w">
@@ -15,6 +14,7 @@
                     <div class="mb-6 text-gray-900 dark:text-gray-100"><h2>Agendamento</h2></div>
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">ID: {{ $appointment->id }}</div>
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Cliente: {{ $appointment->client }}</div>
+                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Serviço: {{ $appointment->service ?? 'Não informado' }}</div> 
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">
                         Status: <!--Vai fazer a checagem do valor e exibir a informação com base no valor-->
                         @if($appointment->status == 0)             

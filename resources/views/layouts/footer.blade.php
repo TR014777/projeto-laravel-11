@@ -1,18 +1,11 @@
 <!--Footer simples e é isso mesmo-->
-<footer class= "bg-white dark:bg-gray-800 shadow ">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"> 
-        <p class="font-semibold text-sm text-gray-800 dark:text-gray-200 leading-tight">       
-            Feito por <a href="https://github.com/TR014777" class="text-blue-500 hover:text-blue-700" target="_blank">Daniel</a> © 2026
+<footer class="mx-auto w-full sm:px-6 lg:px-8 py-12 border-t border-white/10 text-center md:text-left flex flex-col md:flex-row justify-between items-center gap-6">
+        <p class="text-slate-500 text-xs uppercase tracking-widest">
+            &copy; {{ date('Y') }} Agendan - Sistema de Gestão de Agendamentos | Laravel v{{ Illuminate\Foundation\Application::VERSION }} (PHP v{{ PHP_VERSION }})
         </p>
-    </div>
-</footer>
-
-
-
-
-
-
-
-
-
+        <div class="flex items-center gap-2 text-sm">
+            <span class="text-slate-500 italic">Feito por</span>
+            <a href="https://github.com/TR014777" class="font-black text-[#4f75ff] hover:underline decoration-2 underline-offset-4">DANIEL</a>
+        </div>
+    </footer>
 <!--67-->

@@ -1,28 +1,19 @@
-@extends('admin.layouts.app')
-
-@section('title', 'Usuários')
-
-@section('content')
-    <div>
-        <header class="bg-white dark:bg-gray-800 shadow">
-            <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8"> 
-                @include('admin.users.partials.breadcrumb')
-                <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">       
-                    Usuários
-                </h2>
-            </div>
-        </header>
-    </div>
+<x-app-layout>
+    <x-slot name="header">
+        <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
+            {{ __('Usuários') }}
+        </h2>
+    </x-slot>
     <div class="py-12">
         <div class="bg-white dark:bg-gray-800 overflow-hidden shadow-sm sm:rounded-lg p-4 max-w-7xl mx-auto sm:px-6 lg:px-8">
             <x-alert />
             <!--Filtro/Pesquisa de Usuários-->
             <div class="flex flex-row md:flex-row md:justify-between items-start md:items-center">
                 <form action="{{ route('users.index') }}" method="GET" class="flex gap-4">
-                    <input type="number" name="user_id" value="{{ request('user_id') }}" placeholder="ID" class="mb-4 w-20 rounded-md border-gray-300">
-                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Buscar por nome/email" class="mb-4 rounded-md border-gray-300">
+                    <input type="number" name="user_id" value="{{ request('user_id') }}" placeholder="ID" class="mb-4 w-20 rounded-md border-gray-300 dark:bg-gray-900 dark:text-gray-300 px-4">
+                    <input type="text" name="search" value="{{ request('search') }}" placeholder="Buscar por nome/email" class="mb-4 rounded-md border-gray-300 dark:bg-gray-900 dark:text-gray-300 px-4">
                     
-                    <select name="status" class="mb-4 rounded-md border-gray-300">
+                    <select name="status" class="mb-4 rounded-md border-gray-300 dark:bg-gray-900 dark:text-gray-300 pl-4 pr-8">
                         <option value="">Todos os Status</option>
                         <option value="1" {{ request('status') === '1' ? 'selected' : '' }}>Ativo</option>
                         <option value="0" {{ request('status') === '0' ? 'selected' : '' }}>Inativo</option>
@@ -43,7 +34,7 @@
             </div>
 
             <!--Tabela de usuários-->
-            <div class="max-w-6xl mx-auto bg-white shadow-md sm:rounded-lg overflow-hidden sm:rounded-lg">
+            <div class="max-w-6xl mx-auto bg-white dark:bg-gray-800 shadow-md sm:rounded-lg overflow-hidden">
                 <table class="w-full text-sm text-left text-gray-500 dark:text-gray-400">
                     <thead class="text-xs text-gray-700 uppercase bg-gray-50 dark:bg-gray-700 dark:text-gray-400">
                         <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
@@ -55,7 +46,7 @@
                     </thead>
 
                     <!--Listagem dos usuários-->
-                    <tbody class="text-gray-600 text-sm font-light">
+                    <tbody class="text-gray-600 dark:text-gray-400 text-sm font-light">
                         @forelse ($users as $user)
                             <tr class="bg-white border-b dark:bg-gray-800 dark:border-gray-700">
                                 <td class="px-6 py-4">{{ $user->id }}</td>
@@ -75,7 +66,7 @@
                             </tr>
                         @empty
                             <tr>
-                                <td colspan="100">Nenhum usuário no banco</td>
+                                <td colspan="100" class="px-6 py-4 text-center">Nenhum usuário no banco</td>
                             </tr>
                         @endforelse
                     </tbody>
@@ -89,4 +80,4 @@
     <div class="py-4 flex justify-center">
         {{ $users->links() }}
     </div>
-@endsection
+</x-app-layout>

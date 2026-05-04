@@ -22,7 +22,8 @@ class UpdateAppointmentRequest extends FormRequest
     public function rules(): array
     {
         return [
-            'client' => 'required|string|max:255',
+            'client' => 'required|string|max:63',
+            'service'=> 'nullable|string|max:255',
             'date'   => 'required|date|after_or_equal:today',
             'start'  => 'nullable|date_format:H:i', 
             'end'    => 'nullable|date_format:H:i',  

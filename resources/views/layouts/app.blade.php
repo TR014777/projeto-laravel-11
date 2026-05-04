@@ -13,25 +13,18 @@
 
         <!-- Scripts -->
         @vite(['resources/css/app.css', 'resources/js/app.js'])
+
+        <!-- Tailwind CSS-->
+        <script src="https://cdn.tailwindcss.com"></script>
     </head>
+    <style>
+        body { font-family: 'Figtree', sans-serif; }
+        .bg-agendan { color: #1f49c7; }
+        .bg-agendan-soft { background-color: rgba(31, 73, 199, 0.1); }
+    </style>
     <body class="font-sans antialiased">
         <div class="min-h-screen bg-gray-100 dark:bg-gray-900">
             @include('layouts.navigation')
-
-            <!-- Page Heading -->
-            @if (isset($header))
-                <header class="bg-white dark:bg-gray-800 shadow">
-                    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-                        {{ $header }}
-                    </div>
-                </header>
-            @endif
-
-            <!-- Page Content -->
-            <main class="flex-grow">
-                {{ $slot }}
-            </main>
         </div>
-        @include('layouts.footer')
     </body>
 </html>

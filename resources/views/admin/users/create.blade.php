@@ -1,20 +1,11 @@
-@extends('admin.layouts.app')
-
-@section('title', 'Novo Usuário')
-
-@section('content')
-
-<header class="bg-white dark:bg-gray-800 shadow">
-    <div class="max-w-7xl mx-auto py-6 px-4 sm:px-6 lg:px-8">
-        @include('admin.users.partials.breadcrumb')
+<x-app-layout>
+    <x-slot name="header">
         <h2 class="font-semibold text-xl text-gray-800 dark:text-gray-200 leading-tight">
-            Novo Usuário
+            {{ __('Novo Usuário') }}
         </h2>
-    </div>
-</header>
-<!--Vai pegar o formulário para criar um novo usuário-->
-<form action="{{ route('users.store') }}" method="POST">
-    @include('admin.users.partials.form')
-</form>
-
-@endsection
+    </x-slot>
+    <!--Vai pegar o formulário para criar um novo usuário-->
+    <form action="{{ route('users.store') }}" method="POST">
+        @include('admin.users.partials.form')
+    </form>
+</x-app-layout>

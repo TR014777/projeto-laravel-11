@@ -21,9 +21,9 @@
 
         <!-- Confirm Password -->
         <div class="mt-4">
-            <x-input-label for="password_confirmation" :value="__('Confirmar Senha')" />
+            <x-input-label for="password_confirmation" class="text-zinc-400 text-xs ml-1 mb-1" :value="__('Confirmar Senha')" />
 
-            <x-text-input id="password_confirmation" class="block mt-1 w-full"
+            <x-text-input id="password_confirmation" class="block w-full bg-zinc-800/40 border-zinc-700 text-white focus:border-blue-500 focus:ring-blue-500 shadow-sm rounded-lg py-2.5 px-4 text-sm"
                                 type="password"
                                 name="password_confirmation" required autocomplete="new-password" />
 

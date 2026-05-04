@@ -80,6 +80,7 @@ class AppointmentController extends Controller
         auth()->user()->appointments()->create([
             'client' => $validated['client'],
             'date'   => $validated['date'],
+            'service' => $validated['service'],
             'start'  => $startStr,
             'end'    => $endStr,
             'color'  => $validated['color'] ?? '#000000',
@@ -116,6 +117,7 @@ class AppointmentController extends Controller
         $appointment->update([
             'client' => $validated['client'],
             'date'   => $validated['date'],
+            'service' => $validated['service'],
             'start'  => $startStr,
             'end'    => $endStr,
             'color'  => $validated['color'] ?? $appointment->color,
