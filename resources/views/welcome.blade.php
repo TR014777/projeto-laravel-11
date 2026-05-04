@@ -84,7 +84,7 @@
 
                 <div class="grid grid-cols-1 md:grid-cols-3 gap-6">
                     
-                    <div class="md:col-span-2 bento-card glass-effect rounded-[2.5rem] p-10 flex flex-col justify-between border-b-4 border-b-blue-600">
+                    <div class="md:col-span-2 bento-card glass-effect rounded-[2.5rem] p-10 flex flex-col justify-between">
                         <div class="bg-blue-600/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-blue-400">
                             <svg class="w-8 h-8" fill="none" stroke="currentColor" viewBox="0 0 24 24" xmlns="http://www.w3.org/2000/svg">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7h8m0 0v8m0-8l-8 8-4-4-6 6"></path>
@@ -98,7 +98,7 @@
                         </div>
                     </div>
 
-                    <div class="bento-card glass-effect rounded-[2.5rem] p-10 flex flex-col">
+                    <div class="bento-card glass-effect rounded-[2.5rem] p-10 flex flex-col border-b-4 border-b-blue-600">
                         <div class="bg-blue-600/20 w-16 h-16 rounded-2xl flex items-center justify-center mb-6 text-blue-400">
                             <svg class="w-12 h-12" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path stroke-linecap="round" stroke-linejoin="round" stroke-width="1.5" d="M12 8v4l3 3m6-3a9 9 0 11-18 0 9 9 0 0118 0z" />
