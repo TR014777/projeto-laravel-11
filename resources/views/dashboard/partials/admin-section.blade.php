@@ -34,7 +34,7 @@
                 </thead>
                 <tbody class="divide-y dark:divide-gray-700">
                     @foreach($allUsers as $user)
-                        <tr class="text-gray-600 dark:text-gray-300">
+                        <tr onclick="window.location='{{ route('users.show', $user->id) }}'" class="text-gray-600 dark:text-gray-300">
                             <td class="px-4 py-3 text-xs">{{ $user->id }}</td>
                             <td class="px-4 py-3 font-semibold dark:text-gray-200">{{ $user->name }}</td>
                             <td class="px-4 py-3 text-xs">{{ $user->email }}</td>

@@ -6,10 +6,10 @@
     </x-slot>
 
    <div class="py-12">
-        <div class="max-w-7xl sm:px-6 lg:px-8">
-            <div class="p-4 mb-12 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg">
+        <div class="max-w-7xl mx-auto sm:px-6 lg:px-8 space-y-6">
+            <div class="p-4 mb-12 sm:p-8 bg-white dark:bg-gray-800 shadow sm:rounded-lg border-b-4" style="border-color: {{ $appointment->color }};">
                 <x-alert />
-                <div class="max-w">
+                <div class="max-w-7xl">
                     <!--Tabela de informações sobre o agendamento-->
                     <div class="mb-6 text-gray-900 dark:text-gray-100"><h2>Agendamento</h2></div>
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">ID: {{ $appointment->id }}</div>
@@ -25,7 +25,8 @@
                             Cancelado
                         @endif
                     </div>
-                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Horário: [ {{ $appointment->start }} | {{ $appointment->end }} ]</div><!--Informação do turno de trabalho-->
+                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Dia e horário agendado: {{ $appointment->date }} [ {{ $appointment->start }} | {{ $appointment->end }} ]</div>
+                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Criado em: {{ $appointment->created }}</div>
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Ultima atualização: {{ $appointment->updated_at ? $appointment->updated_at : 'Nunca atualizado' }}</div> 
                     <!--Botões de ação-->
                     <div class="px-6 py-4 flex justify-end gap-2">

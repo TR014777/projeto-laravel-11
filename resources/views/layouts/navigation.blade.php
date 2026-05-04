@@ -81,8 +81,7 @@
 
     <main 
         :class="open ? 'pl-64' : 'pl-20'"
-        class="transition-all duration-300 min-h-screen flex flex-grow">
-        <main class="flex-grow">
+        class="transition-all duration-300 min-h-screen">
             @include('layouts.breadcrumb')
             <header class="bg-white dark:bg-gray-800 shadow">
                 <div class="max-w-7xl mx-auto pb-6 px-4 sm:pb-4 lg:px-8">
@@ -91,7 +90,7 @@
             </header>
             {{ $slot }}
             @include('layouts.footer')
-        </main>
+
     </main>
 
 </div>
