@@ -26,7 +26,7 @@
                         @endif
                     </div>
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Dia e horário agendado: {{ $appointment->date }} [ {{ $appointment->start }} | {{ $appointment->end }} ]</div>
-                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Criado em: {{ $appointment->created }}</div>
+                    <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Criado em: {{ $appointment->created_at }}</div>
                     <div class="block font-medium text-sm text-gray-700 dark:text-gray-300">Ultima atualização: {{ $appointment->updated_at ? $appointment->updated_at : 'Nunca atualizado' }}</div> 
                     <!--Botões de ação-->
                     <div class="px-6 py-4 flex justify-end gap-2">
