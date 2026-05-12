@@ -22,6 +22,9 @@ Por trás de tudo isso, usamos ferramentas modernas e confiáveis:
 - **Laravel** (v11.x)  
 - **PHP** (v8.3+)  
 - **Tailwind CSS**
+- **MySQL (v8.0+)**
+- **Node.js**
+- **Docker**
 
 ---
 
@@ -106,6 +109,20 @@ php artisan key:generate
 Rodar as migrations
 ```sh
 php artisan migrate
+```
+
+Saia do container do app e instale o npm
+```sh
+exit
+```
+```sh
+npm install --legacy-peer-deps
+npm install @tailwindcss/postcss postcss autoprefixer --save-dev --legacy-peer-deps
+```
+
+Compile os assets
+```sh
+npm run build
 ```
 
 Acesse o projeto
